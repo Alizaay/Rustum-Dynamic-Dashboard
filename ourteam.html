@@ -53,70 +53,52 @@
       <a href="machineryandplants.html">Machinery and Plants</a>
       <a href="addM&P.html">Add Machinery and Plants</a>
       <a href="ourteam.html">Our team</a>
-      <a href="addteammember.html">Add team member</a>
       <a href="contact.html">Contact</a>
       <a href="#" onclick="window.auth.logout(); return false;">Logout</a>
     </div>
 
     <div class="main-content">
       <div class="container py-4">
-        <h2 class="mb-4">Team Members Management</h2>
-
-        <!-- Upload Form -->
+        <h2 class="mb-4">Team Management</h2>
+    
+        <!-- Add Heading Form -->
         <div class="card mb-4">
           <div class="card-body">
-            <h4 class="card-title mb-4">Add New Team Member</h4>
-            <form id="uploadForm">
+            <h4 class="card-title mb-4">Add Team Heading</h4>
+    
+            <form id="headingForm">
               <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label">Profile Image</label>
-                  <input type="file" id="imageInput" accept="image/*" class="form-control" required>
+                <div class="col-md-9">
+                  <label class="form-label">Heading Name</label>
+                  <input
+                    type="text"
+                    id="headingInput"
+                    class="form-control"
+                    placeholder="Example: Leadership Team"
+                    required
+                  >
                 </div>
-                <div class="col-md-6">
-                  <label class="form-label">Name</label>
-                  <input type="text" id="nameInput" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Designation</label>
-                  <input type="text" id="designationInput" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Facebook Link</label>
-                  <input type="url" id="facebookInput" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">Twitter Link</label>
-                  <input type="url" id="twitterInput" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label">LinkedIn Link</label>
-                  <input type="url" id="linkedinInput" class="form-control">
-                </div>
-                <div class="col-12">
-                  <div class="progress">
-                    <div id="uploadProgress" class="progress-bar" role="progressbar"></div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-primary w-100">Add Team Member</button>
+    
+                <div class="col-md-3 d-flex align-items-end">
+                  <button type="submit" class="btn btn-primary w-100">
+                    Add Heading
+                  </button>
                 </div>
               </div>
             </form>
           </div>
         </div>
-
-        <!-- Team Members Table -->
-        <div class="card">
+    
+        <!-- Headings Table -->
+        <div class="card mb-4">
           <div class="card-body">
-            <h4 class="card-title mb-4">Team Members</h4>
+            <h4 class="card-title mb-4">Team Headings</h4>
+    
             <div class="table-responsive">
-              <table class="table table-bordered table-hover" id="teamTable">
+              <table class="table table-bordered table-hover" id="headingTable">
                 <thead class="table-dark">
                   <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Designation</th>
-                    <th>Social Links</th>
+                    <th>Heading Name</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -125,10 +107,126 @@
             </div>
           </div>
         </div>
+    
+        <!-- Add Team Member Form -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h4 class="card-title mb-4">Add New Team Member</h4>
+    
+            <form id="uploadForm">
+              <div class="row g-3">
+    
+                <div class="col-md-6">
+                  <label class="form-label">Select Heading</label>
+                  <select id="teamHeadingInput" class="form-control" required>
+                    <option value="">Select Heading</option>
+                  </select>
+                </div>
+    
+                <div class="col-md-6">
+                  <label class="form-label">Profile Image</label>
+                  <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/*"
+                    class="form-control"
+                    required
+                  >
+                </div>
+    
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input
+                    type="text"
+                    id="nameInput"
+                    class="form-control"
+                    required
+                  >
+                </div>
+    
+                <div class="col-md-6">
+                  <label class="form-label">Designation</label>
+                  <input
+                    type="text"
+                    id="designationInput"
+                    class="form-control"
+                    required
+                  >
+                </div>
+    
+                <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <select id="statusInput" class="form-control" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                </div>
+    
+                <div class="col-12">
+                  <label class="form-label">Short Description</label>
+                  <textarea
+                    id="shortDescriptionInput"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Short profile description"
+                  ></textarea>
+                </div>
+    
+                <div class="col-12">
+                  <label class="form-label">Long Description</label>
+                  <textarea
+                    id="longDescriptionInput"
+                    class="form-control"
+                    rows="6"
+                    placeholder="Full team member biography"
+                  ></textarea>
+                </div>
+    
+                <div class="col-12">
+                  <div class="progress">
+                    <div id="uploadProgress" class="progress-bar" role="progressbar"></div>
+                  </div>
+                </div>
+    
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary w-100">
+                    Add Team Member
+                  </button>
+                </div>
+    
+              </div>
+            </form>
+          </div>
+        </div>
+    
+        <!-- Team Members Table -->
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title mb-4">Team Members</h4>
+    
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover" id="teamTable">
+                <thead class="table-dark">
+                  <tr>
+                    <th>Image</th>
+                    <th>Heading</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Status</th>
+                    <th>Short Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+    
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
+    </div>
+    
     <!-- Toast Notification -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
       <div id="uploadToast" class="toast align-items-center text-white border-0" role="alert">
@@ -138,61 +236,145 @@
         </div>
       </div>
     </div>
-
-    <!-- Edit Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1">
+    
+    <!-- Edit Heading Modal -->
+    <div class="modal fade" id="editHeadingModal" tabindex="-1">
       <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="editHeadingForm">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Team Heading</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <div class="modal-body">
+              <input type="hidden" id="editHeadingId">
+    
+              <div class="mb-3">
+                <label class="form-label">Heading Name</label>
+                <input
+                  type="text"
+                  id="editHeadingName"
+                  class="form-control"
+                  required
+                >
+              </div>
+            </div>
+    
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Save Heading
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Edit Team Member Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <form id="editForm">
             <div class="modal-header">
               <h5 class="modal-title">Edit Team Member</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
+    
             <div class="modal-body">
               <input type="hidden" id="editId">
+    
+              <div class="mb-3">
+                <label class="form-label">Select Heading</label>
+                <select id="editTeamHeading" class="form-control" required>
+                  <option value="">Select Heading</option>
+                </select>
+              </div>
+    
               <div class="mb-3">
                 <label class="form-label">Change Image</label>
-                <input type="file" id="editImage" accept="image/*" class="form-control">
+                <input
+                  type="file"
+                  id="editImage"
+                  accept="image/*"
+                  class="form-control"
+                >
               </div>
+    
               <div class="mb-3">
                 <label class="form-label">Name</label>
-                <input type="text" id="editName" class="form-control" required>
+                <input
+                  type="text"
+                  id="editName"
+                  class="form-control"
+                  required
+                >
               </div>
+    
               <div class="mb-3">
                 <label class="form-label">Designation</label>
-                <input type="text" id="editDesignation" class="form-control" required>
+                <input
+                  type="text"
+                  id="editDesignation"
+                  class="form-control"
+                  required
+                >
               </div>
+    
               <div class="mb-3">
-                <label class="form-label">Facebook Link</label>
-                <input type="url" id="editFacebook" class="form-control">
+                <label class="form-label">Status</label>
+                <select id="editStatus" class="form-control" required>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                </select>
               </div>
+    
               <div class="mb-3">
-                <label class="form-label">Twitter Link</label>
-                <input type="url" id="editTwitter" class="form-control">
+                <label class="form-label">Short Description</label>
+                <textarea
+                  id="editShortDescription"
+                  class="form-control"
+                  rows="3"
+                ></textarea>
               </div>
+    
               <div class="mb-3">
-                <label class="form-label">LinkedIn Link</label>
-                <input type="url" id="editLinkedin" class="form-control">
+                <label class="form-label">Long Description</label>
+                <textarea
+                  id="editLongDescription"
+                  class="form-control"
+                  rows="6"
+                ></textarea>
               </div>
             </div>
+    
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Save changes
+              </button>
             </div>
+    
           </form>
         </div>
       </div>
     </div>
-
+    
     <script src="Assets/js/our-team.js"></script>
+    
     <script>
-        function toggleSidebar() {
-            document.getElementById("sidebar").classList.toggle("show");
-        }
-
-        function toggleTheme() {
-            document.body.classList.toggle("dark-mode");
-        }
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("show");
+      }
+    
+      function toggleTheme() {
+        document.body.classList.toggle("dark-mode");
+      }
     </script>
 </body>
 </html>
